@@ -10,7 +10,7 @@
 <body>
 <div class="card-panel teal lighten-2"><H1 align="center">Sistema de Cadastro de Projetos e Tarefas</H1></div>
 <div class="container">
-    <H1 align="center">Alterar dados do Projeto</H1>
+    <H1 align="center">Visualizar dados do Projeto</H1>
     <div class="row">
         <div class="input-field col s3">
             <h3><a href="/cadastrarProjeto" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar
@@ -23,16 +23,13 @@
                 de Tarefa</a></h3>
         </div>
         <div class="input-field col s9">
-            <form class="container" action="#" th:action="@{/salvaProjeto}" th:object="${edita}" method="post">
+
                 <div class="row">
-                    <div class="input-field col s6"> Nome: <input type="text" value="" th:field="*{titulo}" id="titulo">
-                    </div>
-                    <div class="input-field col s4"> Data : <input type="date" value=""
-                                                                   th:field="*{dataPrevisaoEntrega}"
+                    <div class="input-field col s6"> Nome: <input type="text" readonly="true" value="${projeto.titulo}" th:field="${projeto.titulo}" id="titulo" /></div>
+                    <div class="input-field col s4"> Data : <input type="date" readonly="true" value="${projeto.dataPrevisaoEntrega}"
+                                                                   th:field="${projeto.dataPrevisaoEntrega}"
                                                                    id="dataPrevisaoEntrega"></div>
                 </div>
-                <button class="waves-effect waves-light btn" type="submit">Salvar</button>
-            </form>
 
             <div class="container">
                 <h6 align="center">Lista de Tarefas do Projeto</h6>
@@ -42,17 +39,11 @@
                             <tr>
                                 <th>Código</th>
                                 <th>Titulo</th>
-                                <th>Delete</th>
-                                <th>Atualizar</th>
                             </tr>
                             <tbody>
                             <tr th:each="tarefa : ${tarefasDoProjeto}">
                                 <td><span th:text="${tarefa.id}"></span></td>
                                 <td><span th:text="${tarefa.titulo}"></span></td>
-                                <td><a th:href="@{/delete/{id}(id=${tarefa.id})}"><i
-                                        class="material-icons center">delete_forever</i></a></td>
-                                <td><a th:href="@{/edit/{id}(id=${tarefa.id})}"><i class="material-icons center">mode_edit</i></a>
-                                </td>
 
                             </tr>
                             </tbody>

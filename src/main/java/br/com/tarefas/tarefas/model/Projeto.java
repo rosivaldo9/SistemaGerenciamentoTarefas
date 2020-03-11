@@ -1,22 +1,23 @@
 package br.com.tarefas.tarefas.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 
 @Entity
-public class Tarefas implements Serializable {
+public class Projeto implements Serializable {
 
     @Id
     @GeneratedValue
+    @Column(name = "id")
     private long id;
+
+    @Column(name = "titulo")
     private String titulo;
 
-     @ManyToOne
-    private Projetos projeto;
+    @Column(name = "data_previsao_entrega")
+    private Date dataPrevisaoEntrega;
 
     public long getId() {
         return id;
@@ -34,11 +35,11 @@ public class Tarefas implements Serializable {
         this.titulo = titulo;
     }
 
-    public Projetos getProjeto() {
-        return projeto;
+    public Date getDataPrevisaoEntrega() {
+        return dataPrevisaoEntrega;
     }
 
-    public void setProjeto(Projetos projeto) {
-        this.projeto = projeto;
+    public void setDataPrevisaoEntrega(Date dataPrevisaoEntrega) {
+        this.dataPrevisaoEntrega = dataPrevisaoEntrega;
     }
 }

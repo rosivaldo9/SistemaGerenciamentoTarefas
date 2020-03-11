@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org"
-      xmlns:layout ="http://www.ultraq.net.nz/thymeleaf/layout">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <meta charset="UTF-8">
-    <title>Evento App</title>
+    <title>Projetos e Tarefas</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body>
-
-<H1 align="center">Cadastro de Alunos </H1>
-<div class="input-field col s3">
-    <h3><a href="/cadastrarProjeto" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Projeto</a></h3>
-    <h3><a href="/projetos" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista de Projetos</a></h3>
-    <h3><a href="/cadastrarTarefa" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Tarefa</a></h3>
-    <h3><a href="/tarefas" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista de Tarefa</a></h3>
-</div>
-<form class="container" action="#" th:action="@{/salvaTarefa}" th:object="${edita}" method="post">
-    <div  class="row">
-        <div class="input-field col s2"> ID: <input type="number" value="" th:field="*{id}" id="id"></div>
-        <div class="input-field col s6"> Titulo: <input type="text" value="" th:field="*{titulo}" id="titulo"></div>
-        <div class="input-field col s4"> Projeto: <input type="text" value="" th:field="*{projeto}" id="projeto."></div>
+<div class="card-panel teal lighten-2"><H1 align="center">Sistema de Cadastro de Projetos e Tarefas</H1></div>
+<div class="container">
+    <H1 align="center">Editar Tarefa</H1>
+    <div class="row">
+        <div class="input-field col s3">
+                <h3><a href="/cadastrarProjeto" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar
+                    Projeto</a></h3>
+                <h3><a href="/projetos" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista
+                    de Projetos</a></h3>
+                <h3><a href="/cadastrarTarefa" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar
+                    Tarefa</a></h3>
+                <h3><a href="/tarefas" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista
+                    de Tarefa</a></h3>
+        </div>
+        <div class="input-field col s9">
+            <form class="container" action="#" th:action="@{/salvaTarefa}" th:object="${edita}" method="post">
+                <div class="row">
+                    <div class="input-field col s6"> Titulo: <input type="text" value="" th:field="*{titulo}"
+                                                                    id="titulo"></div>
+                </div>
+                <button class="waves-effect waves-light btn" type="submit">Salvar</button>
+            </form>
+        </div>
     </div>
-    <button class="waves-effect waves-light btn" type="submit">Salvar</button>
-</form>
-
-
-
-
-
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
