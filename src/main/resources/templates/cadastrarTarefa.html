@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout ="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Evento App</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+
+
+<div class="card-panel teal lighten-2"><H1 align="center">Sistemas de cadastro de projetos e suas tarefas</H1></div>
+
+<div class="container">
+    <H1 align="center">Cadastrar Tarefa</H1>
+    <div class="row">
+        <div class="input-field col s3">
+            <h3><a href="/cadastrarProjeto" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Projeto</a></h3>
+            <h3><a href="/projetos" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista de Projetos</a></h3>
+            <h3><a href="/cadastrarTarefa" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Tarefa</a></h3>
+            <h3><a href="/tarefas" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista de Tarefa</a></h3>
+        </div>
+        <div class="input-field col s9">
+
+<form class="container" method="post">
+    <div class="row">
+        <div class="input-field col s6"> Nome: <input type="text" value="" name="titulo"></div>
+          <div>
+            <select style="display: inline !important;" name="projeto.id">
+                    <option th:each="p : ${projetos}" th:value="${p.id}" th:text="${p.titulo}"></option>
+            </select>
+          </div>
+    </div>
+    <button class="waves-effect waves-light btn" type="submit">Salvar</button>
+</form>
+
+
+</div></div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

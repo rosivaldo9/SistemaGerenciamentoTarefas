@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout ="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Evento App</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+
+
+<div class="card-panel teal lighten-2"><H1 align="center">Sistemas de cadastro de projetos e suas tarefas</H1></div>
+
+<div class="container">
+    <H1 align="center">Lista de Tarefas</H1>
+    <div class="row">
+        <div class="input-field col s3">
+            <h3><a href="/cadastrarProjeto" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Projeto</a></h3>
+            <h3><a href="/projetos" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista de Projetos</a></h3>
+            <h3><a href="/cadastrarTarefa" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Tarefa</a></h3>
+            <h3><a href="/tarefas" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista de Tarefa</a></h3>
+        </div>
+        <div class="input-field col s9">
+<table class="container">
+    <tr>
+        <th>Id</th>
+        <th>titulo</th>
+        <th>Delete</th>
+        <th>Atualizar</th>
+    </tr>
+    <tbody>
+    <tr th:each="tarefas : ${tarefa}">
+        <td><span th:text="${tarefas.id}"></span></td>
+        <td><span th:text="${tarefas.titulo}"></span></td>
+        <td><a th:href="@{/delete/{id}(id=${tarefas.id})}"><i class="material-icons center">delete_forever</i></a></td>
+        <td><a th:href="@{/edit/{id}(id=${tarefas.id})}"><i class="material-icons center">mode_edit</i></a></td>
+
+    </tr>
+    </tbody>
+</table>
+
+
+
+
+</div></div>
+</div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

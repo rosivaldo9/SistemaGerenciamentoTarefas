@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout ="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Alterar dados do Projeto</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+
+<H1 align="center">Alterar dados do Projeto </H1>
+<div class="input-field col s3">
+    <h3><a href="/cadastrarProjeto" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Projeto</a></h3>
+    <h3><a href="/projetos" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista de Projetos</a></h3>
+    <h3><a href="/cadastrarTarefa" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Tarefa</a></h3>
+    <h3><a href="/tarefas" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista de Tarefa</a></h3>
+</div>
+<form class="container" action="#" th:action="@{/salvaProjeto}" th:object="${edita}" method="post">
+    <div  class="row">
+        <div class="input-field col s2"> Nome: <input type="number" value="" th:field="*{id}" id="id"></div>
+        <div class="input-field col s6"> Nome: <input type="text" value="" th:field="*{titulo}" id="titulo"></div>
+        <div class="input-field col s4"> Data : <input type="date" value="" th:field="*{dataEntrega}" id="dataEntrega"></div>
+    </div>
+    <button class="waves-effect waves-light btn" type="submit">Salvar</button>
+</form>
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
