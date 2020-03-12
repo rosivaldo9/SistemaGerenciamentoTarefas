@@ -4,7 +4,7 @@ Sistema Gerenciamento Tarefas
 
 Tecnologias usadas:
 
-java, framework Spring boot, framework Materialize, banco de dados Postgresql, Intellij  IDE.
+java, framework Spring boot, framework Materialize, banco de dados Postgresql.
 
 
 Instruções para instalação e execução do projeto:
